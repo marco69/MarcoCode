@@ -53,6 +53,7 @@ echo -e "\n--- Setting document root to public directory ---\n"
 rm -rf /var/www
 ln -fs /vagrant/public /var/www
 
+
 echo -e "\n--- Turn on PHP errors ...... ---\n"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
@@ -64,13 +65,16 @@ echo -e "\n--- Extracting Wordpress Latest release....  ---\n"
 gunzip -f /vagrant/public/latest.tar.gz
 echo -e "\n--- TAR -- Extracting Wordpress Latest release....  ---\n"
 cd /vagrant/public/
+
+
 tar -xvf latest.tar 
+
 
 echo -e "\n--- Chown  Wordpress directory....  ---\n"
 sudo chown -R vagrant:www-data /vagrant/public/wordpress
 
 echo -e "\n--- Add environment variables to Apache ---\n"
-cat > /etc/apache2/sites-enabled/000-default.conf <<EOF
+cat > /etc/apache2/sites-available/default <<EOF
 <VirtualHost *:80>
     DocumentRoot /var/www/wordpress
     ErrorLog \${APACHE_LOG_DIR}/error.log
@@ -82,7 +86,7 @@ cat > /etc/apache2/sites-enabled/000-default.conf <<EOF
     SetEnv DB_PASS $DBPASSWD
 </VirtualHost>
 EOF
-
+/usr/sbin/a2ensite default 
 echo -e "\n--- Restarting Apache ---\n"
 service apache2 restart > /dev/null 2>&1
 
