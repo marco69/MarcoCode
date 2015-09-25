@@ -8,7 +8,7 @@ DB_PASSWD=WordPress
 
 echo -e "\n--- Start installation of the packages needed for Wordpress, installing now... ---\n"
 
-echo -e "\n--- Updating packages list ---\n"
+echo -e "\n--- Updating packages list of teh ubuntu server---\n"
 apt-get -qq update
 
 echo -e "\n--- Install base packages ---\n"
