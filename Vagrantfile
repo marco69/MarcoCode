@@ -11,3 +11,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     owner: "vagrant",
     group: "vagrant"
 end
+#This is the file which will fire the vm
