@@ -18,7 +18,7 @@ apt-get -y install vim curl build-essential python-software-properties git gunzi
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
 echo "mysql-server mysql-server/root_password password $DB_ROOT_PASSWD" | debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $DB_ROOT_PASSWD" | debconf-set-selections
-apt-get -y install mysql-server-5.5  > /dev/null 2>&1
+apt-get -y install mysql-server-5.5 mysql-client > /dev/null 2>&1
 
 echo -e "\n--- Setting up our MySQL user and db ---\n"
 if [ ! -f /var/log/dbinstalled ];
@@ -60,14 +60,14 @@ sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
 
 echo -e "\n--- Downloading Wordpress Latest release....  ---\n"
 rm -Rf /vagrant/public/*
-wget --directory-prefix=/vagrant/public https://wordpress.org/latest.tar.gz 
+wget --directory-prefix=/vagrant/public https://wordpress.org/latest.tar.gz
 echo -e "\n--- Extracting Wordpress Latest release....  ---\n"
 gunzip -f /vagrant/public/latest.tar.gz
 echo -e "\n--- TAR -- Extracting Wordpress Latest release....  ---\n"
 cd /vagrant/public/
 
 
-tar -xvf latest.tar 
+tar -xvf latest.tar
 
 
 echo -e "\n--- Chown  Wordpress directory....  ---\n"
@@ -86,7 +86,6 @@ cat > /etc/apache2/sites-available/default <<EOF
     SetEnv DB_PASS $DBPASSWD
 </VirtualHost>
 EOF
-/usr/sbin/a2ensite default 
+/usr/sbin/a2ensite default
 echo -e "\n--- Restarting Apache ---\n"
 service apache2 restart > /dev/null 2>&1
-

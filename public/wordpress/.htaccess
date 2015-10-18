@@ -1,6 +1,5 @@
 
 # BEGIN WordPress
-# Ciao a tutti
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
