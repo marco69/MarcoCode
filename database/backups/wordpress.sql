@@ -71,7 +71,7 @@ CREATE TABLE `wp_comments` (
   KEY `comment_date_gmt` (`comment_date_gmt`),
   KEY `comment_parent` (`comment_parent`),
   KEY `comment_author_email` (`comment_author_email`(10))
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `wp_comments` (
 
 LOCK TABLES `wp_comments` WRITE;
 /*!40000 ALTER TABLE `wp_comments` DISABLE KEYS */;
-INSERT INTO `wp_comments` VALUES (1,1,'Mr WordPress','','https://wordpress.org/','','2015-10-18 13:38:21','2015-10-18 13:38:21','Hi, this is a comment.\nTo delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.',0,'1','','',0,0),(2,1,'marco','pippo@pippo.com','http://ciao','192.168.50.1','2015-10-18 14:02:33','2015-10-18 14:02:33','wlncl ksdn lksdnv sdlkvn sdlks',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0','',1,0),(3,1,'marco','pippo@pippo.com','http://ciao','192.168.50.1','2015-10-18 14:35:50','2015-10-18 14:35:50','hjb jb jk jkb kjb',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0','',2,0);
+INSERT INTO `wp_comments` VALUES (1,1,'Mr WordPress','','https://wordpress.org/','','2015-10-18 13:38:21','2015-10-18 13:38:21','Hi, this is a comment.\nTo delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.',0,'1','','',0,0),(2,1,'marco','pippo@pippo.com','http://ciao','192.168.50.1','2015-10-18 14:02:33','2015-10-18 14:02:33','wlncl ksdn lksdnv sdlkvn sdlks',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0','',1,0),(3,1,'marco','pippo@pippo.com','http://ciao','192.168.50.1','2015-10-18 14:35:50','2015-10-18 14:35:50','hjb jb jk jkb kjb',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0','',2,0),(4,1,'marco','pippo@pippo.com','','192.168.50.1','2015-10-18 16:48:37','2015-10-18 16:48:37','ciqo',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36','',2,1),(5,1,'marco','pippo@pippo.com','','192.168.50.1','2015-10-18 16:49:00','2015-10-18 16:49:00','csdcsdcdscdscd',0,'1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36','',4,1);
 /*!40000 ALTER TABLE `wp_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +219,7 @@ CREATE TABLE `wp_posts` (
 
 LOCK TABLES `wp_posts` WRITE;
 /*!40000 ALTER TABLE `wp_posts` DISABLE KEYS */;
-INSERT INTO `wp_posts` VALUES (1,1,'2015-10-18 13:38:21','2015-10-18 13:38:21','Welcome to WordPress. This is your first post. Edit or delete it, then start writing!','Hello world!','','publish','open','open','','hello-world','','','2015-10-18 13:38:21','2015-10-18 13:38:21','',0,'http://192.168.50.4/?p=1',0,'post','',3),(2,1,'2015-10-18 13:38:21','2015-10-18 13:38:21','This is an example page. It\'s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I\'m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin\' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href=\"http://192.168.50.4/wp-admin/\">your dashboard</a> to delete this page and create new pages for your content. Have fun!','Sample Page','','publish','closed','open','','sample-page','','','2015-10-18 13:38:21','2015-10-18 13:38:21','',0,'http://192.168.50.4/?page_id=2',0,'page','',0),(3,1,'2015-10-18 13:38:30','0000-00-00 00:00:00','','Auto Draft','','auto-draft','open','open','','','','','2015-10-18 13:38:30','0000-00-00 00:00:00','',0,'http://192.168.50.4/?p=3',0,'post','',0);
+INSERT INTO `wp_posts` VALUES (1,1,'2015-10-18 13:38:21','2015-10-18 13:38:21','Welcome to WordPress. This is your first post. Edit or delete it, then start writing!','Hello world!','','publish','open','open','','hello-world','','','2015-10-18 13:38:21','2015-10-18 13:38:21','',0,'http://192.168.50.4/?p=1',0,'post','',5),(2,1,'2015-10-18 13:38:21','2015-10-18 13:38:21','This is an example page. It\'s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I\'m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin\' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href=\"http://192.168.50.4/wp-admin/\">your dashboard</a> to delete this page and create new pages for your content. Have fun!','Sample Page','','publish','closed','open','','sample-page','','','2015-10-18 13:38:21','2015-10-18 13:38:21','',0,'http://192.168.50.4/?page_id=2',0,'page','',0),(3,1,'2015-10-18 13:38:30','0000-00-00 00:00:00','','Auto Draft','','auto-draft','open','open','','','','','2015-10-18 13:38:30','0000-00-00 00:00:00','',0,'http://192.168.50.4/?p=3',0,'post','',0);
 /*!40000 ALTER TABLE `wp_posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,4 +378,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-18 15:18:10
+-- Dump completed on 2015-10-18 16:50:24
