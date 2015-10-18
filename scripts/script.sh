@@ -58,16 +58,17 @@ echo -e "\n--- Turn on PHP errors ...... ---\n"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
 
-echo -e "\n--- Downloading Wordpress Latest release....  ---\n"
-rm -Rf /vagrant/public/*
-wget --directory-prefix=/vagrant/public https://wordpress.org/latest.tar.gz
-echo -e "\n--- Extracting Wordpress Latest release....  ---\n"
-gunzip -f /vagrant/public/latest.tar.gz
-echo -e "\n--- TAR -- Extracting Wordpress Latest release....  ---\n"
-cd /vagrant/public/
+echo -e "\n--- Using the public where Wordpress is installed\n"
+#echo -e "\n--- Downloading Wordpress Latest release....  ---\n"
+#rm -Rf /vagrant/public/*
+#wget --directory-prefix=/vagrant/public https://wordpress.org/latest.tar.gz
+#echo -e "\n--- Extracting Wordpress Latest release....  ---\n"
+#gunzip -f /vagrant/public/latest.tar.gz
+#echo -e "\n--- TAR -- Extracting Wordpress Latest release....  ---\n"
+#cd /vagrant/public/
 
 
-tar -xvf latest.tar
+#tar -xvf latest.tar
 
 
 echo -e "\n--- Chown  Wordpress directory....  ---\n"
