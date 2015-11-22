@@ -13,6 +13,7 @@ VAGRANTFILE_API_VERSION = "2"
   			v.memory = 1024
   			v.cpus = 1
 		end
+	  config.hostsupdater.aliases = ["simpliit.dev"]
 		if Vagrant.has_plugin? 'vagrant-triggers'
 	  config.trigger.before :halt, :stdout => true do
 
