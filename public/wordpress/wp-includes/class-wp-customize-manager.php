@@ -1535,11 +1535,17 @@ final class WP_Customize_Manager {
 	 */
 	public function get_return_url() {
 		$referer = wp_get_referer();
+<<<<<<< HEAD
 		$excluded_referer_basenames = array( 'customize.php', 'wp-login.php' );
 
 		if ( $this->return_url ) {
 			$return_url = $this->return_url;
 		} else if ( $referer && ! in_array( basename( parse_url( $referer, PHP_URL_PATH ) ), $excluded_referer_basenames, true ) ) {
+=======
+		if ( $this->return_url ) {
+			$return_url = $this->return_url;
+		} else if ( $referer && 'customize.php' !== basename( parse_url( $referer, PHP_URL_PATH ) ) ) {
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 			$return_url = $referer;
 		} else if ( $this->preview_url ) {
 			$return_url = $this->preview_url;

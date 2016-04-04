@@ -3646,11 +3646,19 @@ function update_object_term_cache($object_ids, $object_type) {
 function update_term_cache( $terms, $taxonomy = '' ) {
 	foreach ( (array) $terms as $term ) {
 		// Create a copy in case the array was passed by reference.
+<<<<<<< HEAD
 		$_term = clone $term;
 
 		// Object ID should not be cached.
 		unset( $_term->object_id );
 
+=======
+		$_term = $term;
+
+		// Object ID should not be cached.
+		unset( $_term->object_id );
+
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 		wp_cache_add( $term->term_id, $_term, 'terms' );
 	}
 }

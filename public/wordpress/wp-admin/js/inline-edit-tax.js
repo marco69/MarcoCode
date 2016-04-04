@@ -137,8 +137,11 @@ inlineEditTax = {
 				}
 			}
 		);
+<<<<<<< HEAD
 		// Prevent submitting the form when pressing Enter on a focused field.
 		return false;
+=======
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 	},
 
 	revert : function() {

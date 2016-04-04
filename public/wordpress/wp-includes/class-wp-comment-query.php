@@ -60,6 +60,7 @@ class WP_Comment_Query {
 	);
 
 	/**
+<<<<<<< HEAD
 	 * SQL WHERE clause.
 	 *
 	 * Stored after the 'comments_clauses' filter is run on the compiled WHERE sub-clauses.
@@ -71,6 +72,8 @@ class WP_Comment_Query {
 	protected $filtered_where_clause;
 
 	/**
+=======
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 	 * Date query container
 	 *
 	 * @since 3.7.0
@@ -758,7 +761,11 @@ class WP_Comment_Query {
 			foreach ( $post_fields as $field_name => $field_value ) {
 				// $field_value may be an array.
 				$esses = array_fill( 0, count( (array) $field_value ), '%s' );
+<<<<<<< HEAD
 				$this->sql_clauses['where'][ $field_name ] = $wpdb->prepare( " {$wpdb->posts}.{$field_name} IN (" . implode( ',', $esses ) . ')', $field_value );
+=======
+				$this->sql_clauses['where']['post_fields'] = $wpdb->prepare( " {$wpdb->posts}.{$field_name} IN (" . implode( ',', $esses ) . ')', $field_value );
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 			}
 		}
 
@@ -827,8 +834,11 @@ class WP_Comment_Query {
 		$limits = isset( $clauses[ 'limits' ] ) ? $clauses[ 'limits' ] : '';
 		$groupby = isset( $clauses[ 'groupby' ] ) ? $clauses[ 'groupby' ] : '';
 
+<<<<<<< HEAD
 		$this->filtered_where_clause = $where;
 
+=======
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 		if ( $where ) {
 			$where = 'WHERE ' . $where;
 		}
@@ -880,6 +890,7 @@ class WP_Comment_Query {
 			0 => wp_list_pluck( $comments, 'comment_ID' ),
 		);
 
+<<<<<<< HEAD
 		/*
 		 * The WHERE clause for the descendant query is the same as for the top-level
 		 * query, minus the `parent`, `parent__in`, and `parent__not_in` sub-clauses.
@@ -901,6 +912,14 @@ class WP_Comment_Query {
 				$_where = implode( ' AND ', $_where_parts );
 			}
 		}
+=======
+		$where_clauses = $this->sql_clauses['where'];
+		unset(
+			$where_clauses['parent'],
+			$where_clauses['parent__in'],
+			$where_clauses['parent__not_in']
+		);
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 
 		// Fetch an entire level of the descendant tree at a time.
 		$level = 0;
@@ -910,7 +929,11 @@ class WP_Comment_Query {
 				break;
 			}
 
+<<<<<<< HEAD
 			$where = 'WHERE ' . $_where . ' AND comment_parent IN (' . implode( ',', array_map( 'intval', $parent_ids ) ) . ')';
+=======
+			$where = 'WHERE ' . implode( ' AND ', $where_clauses ) . ' AND comment_parent IN (' . implode( ',', array_map( 'intval', $parent_ids ) ) . ')';
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
 			$comment_ids = $wpdb->get_col( "{$this->sql_clauses['select']} {$this->sql_clauses['from']} {$where} {$this->sql_clauses['groupby']} ORDER BY comment_date_gmt ASC, comment_ID ASC" );
 
 			$level++;

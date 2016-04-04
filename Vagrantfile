@@ -12,7 +12,26 @@ VAGRANTFILE_API_VERSION = "2"
   			v.name = "master-test-vagrant"
   			v.memory = 1024
   			v.cpus = 1
+<<<<<<< HEAD
 		
 	  end
 end
 #This is the file which will fire the vm
+=======
+		end
+	  config.hostsupdater.aliases = ["simpliit.dev"]
+		if Vagrant.has_plugin? 'vagrant-triggers'
+	  config.trigger.before :halt, :stdout => true do
+
+	      info "Backing up database: wordpress"
+	      run "vagrant ssh -c 'mysqldump -u wordpress -pWordPress wordpress > /vagrant/database/backups/wordpress.sql'"
+	    end
+			config.trigger.after :up, :stdout => true do
+
+		      info "Restore database: wordpress"
+		      run "vagrant ssh -c 'mysql -u wordpress -pWordPress wordpress < /vagrant/database/backups/wordpress.sql'"
+		    end
+	  end
+end
+#This is the file wÒhich will fire the vm Ciao .. 
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16

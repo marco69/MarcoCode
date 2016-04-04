@@ -56,7 +56,11 @@ if (PHP_VERSION_ID < 70000) {
          * 
          * See ERRATA.md for our reasoning behind this particular order
          */
+<<<<<<< HEAD
         if (PHP_VERSION_ID >= 50300 && extension_loaded('libsodium') && function_exists('\\Sodium\\randombytes_buf')) {
+=======
+        if (extension_loaded('libsodium')) {
+>>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
             // See random_bytes_libsodium.php
             require_once $RandomCompatDIR.'/random_bytes_libsodium.php';
         }
