@@ -17,6 +17,7 @@ VAGRANTFILE_API_VERSION = "2"
 	  end
 end
 #This is the file which will fire the vm
+#This is the file which will fire the vm
 =======
 		end
 	  config.hostsupdater.aliases = ["simpliit.dev"]
