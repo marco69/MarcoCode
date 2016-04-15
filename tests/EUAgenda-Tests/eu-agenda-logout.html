@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://euagenda.eu/" />
-<title>eu-agenda-login-logout</title>
+<title>eu-agenda-logout</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">eu-agenda-login-logout</td></tr>
+<tr><td rowspan="1" colspan="3">eu-agenda-logout</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -17,25 +17,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Log In')])[2]</td>
+	<td>click</td>
+	<td>link=Account</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=email</td>
-	<td>marco.battistoni@gmail.com</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=pwd</td>
-	<td>Peloia11101969</td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
-	<td>//button[@type='submit']</td>
+	<td>link=Log Out</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>
