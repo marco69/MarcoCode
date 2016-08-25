@@ -9,21 +9,21 @@ VAGRANTFILE_API_VERSION = "2"
 	  config.vm.network "private_network", ip: "192.168.50.4"
 	  config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", owner: "vagrant", group: "vagrant"
 		config.vm.provider "virtualbox" do |v|
-  			v.name = "master-test-vagrant"
+  			v.name = "wordpress-test"
   			v.memory = 1024
   			v.cpus = 1
-<<<<<<< HEAD
+
 		
 	  end
-end
+ 
 #This is the file which will fire the vm
 #This is the file which will fire the vm
-=======
-		end
-	  config.hostsupdater.aliases = ["simpliit.dev"]
+
+
+	  
 		if Vagrant.has_plugin? 'vagrant-triggers'
 	  config.trigger.before :halt, :stdout => true do
-
+config.hostsupdater.aliases = ["simpliit.dev"]
 	      info "Backing up database: wordpress"
 	      run "vagrant ssh -c 'mysqldump -u wordpress -pWordPress wordpress > /vagrant/database/backups/wordpress.sql'"
 	    end
@@ -34,5 +34,4 @@ end
 		    end
 	  end
 end
-#This is the file wÒhich will fire the vm Ciao .. 
->>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16
+

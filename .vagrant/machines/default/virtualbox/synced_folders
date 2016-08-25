@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 {"virtualbox":{"vagrant-root":{"id":"vagrant-root","owner":"vagrant","group":"vagrant","guestpath":"/vagrant","hostpath":"C:/Users/battistm/Documents/MarcoCode","disabled":false}}}
-=======
-{"virtualbox":{"vagrant-root":{"id":"vagrant-root","owner":"vagrant","group":"vagrant","guestpath":"/vagrant","hostpath":"/Users/marco/MarcoCode","disabled":false,"__vagrantfile":true}}}
->>>>>>> b9ce919cd332a0528a81fde32f4d7a4ea1225a16

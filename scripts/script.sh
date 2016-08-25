@@ -18,6 +18,7 @@ apt-get -y install vim curl build-essential python-software-properties git gunzi
 echo -e "\n--- Install MySQL specific packages and settings ---\n"
 echo "mysql-server mysql-server/root_password password $DB_ROOT_PASSWD" | debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $DB_ROOT_PASSWD" | debconf-set-selections
+
 apt-get -y install mysql-server-5.5 mysql-client > /dev/null 2>&1
 
 echo -e "\n--- Setting up our MySQL user and db ---\n"
